@@ -1,0 +1,5 @@
+@media (max-width:767px){
+    #datatable_wrapper{
+        overflow:auto !important;
+    }
+}
