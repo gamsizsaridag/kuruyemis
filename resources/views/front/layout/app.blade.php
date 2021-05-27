@@ -683,4 +683,26 @@
 <script
     src="https://dessign.net/shopper-woocommerce-theme/wp-content/themes/ShopperWooThemePremium3/js/scripts.js"></script>
 </body>
+
+<style>
+    .home_small_box {
+        width: 257px !important;
+    }
+    @media only screen and (max-width: 1200px){
+        .home_small_box {
+            width: 224px !important;
+        }
+    }
+    @media only screen and (max-width: 1200px)
+    {
+        @media only screen and (min-width: 768px) and (max-width: 959px)
+        {
+            .home_small_box {
+                width: 176px !important;
+            }
+        }
+    }
+</style>
+
+
 </html>

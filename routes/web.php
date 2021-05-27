@@ -122,7 +122,11 @@ Route::get('/about', [FAboutController::class, 'index'])->name('front.about');
 Route::get('/contact', [FContactController::class, 'index'])->name('front.contact');
 Route::get('/catalog', [FCatalogController::class, 'index'])->name('front.catalog');
 
-
+Route::get('/deneme', function (){
+    $pdf = App::make('dompdf.wrapper');
+    $pdf->loadHTML('<h1>Test</h1>');
+    return $pdf->stream();
+});
 
 
 

@@ -49,7 +49,7 @@ class ProductController extends Controller
         $image_name="/images/urun/default.jpg";
         if ($request->hasFile('image'))
         {
-            $image_name=$url."-".uniqid().".".$request->file('image')->getClientOriginalExtension();
+            $image_name=$new_text."-".uniqid().".".$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path('images/urun'),$image_name);
             $image_name="/images/urun/".$image_name;
         }

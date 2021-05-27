@@ -8,8 +8,8 @@
             @php($sayac=0)
             @foreach($products as $key)
                 @php($sayac=$sayac+1)
-                @if($sayac<=3)
-                    <div class="home_small_box {{$sayac==3?"home_small_box_last":""}} ">
+                @if($sayac<=4)
+                    <div class="home_small_box {{$sayac==4?"home_small_box_last":""}}">
 
                         <a href="{{$key->url}}"
                            class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
@@ -21,7 +21,8 @@
                             <a href="{{$key->url}}">
                                 <img width="360" height="360"
                                      src="{{$key->image}}"
-                                     class="attachment-home-small-box size-home-small-box wp-post-image" alt="">
+                                     class="attachment-home-small-box size-home-small-box wp-post-image" alt=""
+                                    >
                             </a>
                         </div>
                         <div class="sb_title"><a
@@ -44,23 +45,23 @@
                         </div>
                     </div>
                 @endif
-                @if($sayac==3)
+                @if($sayac==4)
                     <div class="home_small_box clear"></div>
                     @php($sayac=0)
                 @endif
             @endforeach
         </div><!--//posts_cont-->
 
-        <span style="text-align: center">
-                           {{$products->links()}}
-                     </span>
+
 
 
         <div id="max_pages_id" style="display: none;">1</div>
 
 
         <div class="clear"></div>
-
+        <span style="text-align: center">
+                           {{$products->links()}}
+                     </span>
     </div>
 
 @endsection
