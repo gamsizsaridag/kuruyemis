@@ -32,7 +32,7 @@
                 <th scope="col"></th>
                 <th scope="col">Ürün Adı</th>
                 <th scope="col">Kategori</th>
-                <th scope="col">Marka</th>
+                <th scope="col">Birim</th>
                 <th scope="col">Fiyatı</th>
                 <th scope="col">Durum</th>
                 <th scope="col"></th>
@@ -48,7 +48,7 @@
                     <td><img src="{{$key->image}}" width="50" height="50px"/></td>
                     <td>{{$key->name}}</td>
                     <td>{{$key->categoryId == 0 ? "---yok---":$key->category->name}}</td>
-                    <td>{{$key->brandId == 0 ? "---yok---":$key->brand->name}}</td>
+                    <td>{{$key->unit_id==1?'Kg':'Paket'}}</td>
                     <td>
                         @if($key->discountedPrice == null)
                             {{$key->price}}

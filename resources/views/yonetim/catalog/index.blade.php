@@ -4,10 +4,18 @@
 @section('modul')
 
     <div class="row page-titles">
-        <div class="col-md-5 align-self-center">
+        <div class="col-md-4 align-self-center">
             <h4 class="text-themecolor">Kataloglar</h4>
         </div>
-        <div class="col-md-7 align-self-center text-right">
+        <div class="col-md-3">
+            <a href="{{route('yonetim.pdf')}}" target="_blank">
+                <button type="button"
+                        class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> PDF Katalog
+                    Oluştur
+                </button>
+            </a>
+        </div>
+        <div class="col-md-5 align-self-center text-right">
             <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">AnaSayfa</a></li>
@@ -48,13 +56,15 @@
                     <td>{{$key->updated_at==null? $key->created_at:$key->updated_at}}</td>
                     <td>{{$key->must}}</td>
                     <td width="2%" style="text-align: center">
-                        <button type="" class="btn waves-effect waves-light btn-sm btn-{{$key->status==1?'warning':'secondary'}}">
+                        <button type=""
+                                class="btn waves-effect waves-light btn-sm btn-{{$key->status==1?'warning':'secondary'}}">
                             <i class="fas fa-check-circle"></i>
                         </button>
                     </td>
 
                     <td width="2%">
-                        <a href="{{ route('yonetim.catalog.edit',$key->id)}}"><i style="color: blue;" class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ route('yonetim.catalog.edit',$key->id)}}"><i style="color: blue;"
+                                                                                 class="fas fa-pencil-alt"></i></a>
                     </td>
 
                     <td width="2%">
@@ -76,7 +86,7 @@
             destroy_id = $(this).attr('id');
             alertify.confirm('Silme işlemini onaylayın!', 'Bu işlem geri alınamaz',
                 function () {
-                    location.href = "/yonetim/catalog/delete/"+destroy_id;
+                    location.href = "/yonetim/catalog/delete/" + destroy_id;
                 },
                 function () {
                     alertify.error('Silme işlemi iptal edildi')

@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CatalogController;
 use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\PdfController;
 use App\Http\Controllers\Front\FHomeController;
 use App\Http\Controllers\Front\FProductController;
 use App\Http\Controllers\Front\FCategoryController;
@@ -108,7 +109,9 @@ Route::prefix('/yonetim')->middleware('adminAuth')->group(function () {
         Route::post('/update/{id}', [MessageController::class, 'update'])->name('yonetim.message.update');
     });
 
-
+    Route::prefix('/pdf')->group(function () {
+        Route::get('/', [PdfController::class, 'catalog'])->name('yonetim.pdf');
+    });
 });
 
 Route::get('/', [FHomeController::class, 'index'])->name('front.home');
@@ -122,11 +125,6 @@ Route::get('/about', [FAboutController::class, 'index'])->name('front.about');
 Route::get('/contact', [FContactController::class, 'index'])->name('front.contact');
 Route::get('/catalog', [FCatalogController::class, 'index'])->name('front.catalog');
 
-Route::get('/deneme', function (){
-    $pdf = App::make('dompdf.wrapper');
-    $pdf->loadHTML('<h1>Test</h1>');
-    return $pdf->stream();
-});
 
 
 

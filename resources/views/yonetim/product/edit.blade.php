@@ -106,6 +106,23 @@
         </div>
 
         <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">Birim</label>
+            <div class="col-2">
+                <select class="form-control" name="unit_id">
+                    <option value="1"
+                        {{$product->unit_id == 1 ? 'selected' : ''}}
+                    >Kg
+                    </option>
+                    <option value="2"
+                        {{$product->unit_id == 2 ? 'selected' : ''}}
+                    >Paket
+                    </option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label for="example-text-input" class="col-2 col-form-label">Açıklama</label>
             <div class="col-9">
                 <textarea class="form-control ckeditor" name="description"

@@ -27,7 +27,7 @@
                 </div>
 
                 {{--                @if(request('search') == null)--}}
-                <div style="float: right;" class="archive_header_right">
+                <div style="float: right;margin-top: 8px;" class="archive_header_right">
 
                     <div class="woocommerce-notices-wrapper"></div>
 

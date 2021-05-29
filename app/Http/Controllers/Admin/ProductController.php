@@ -68,6 +68,7 @@ class ProductController extends Controller
         $key->discountedPrice=$request['discountedPrice'];
         $key->categoryId=$request['categoryId'];
         $key->brandId=$request['brandId'];
+        $key->unit_id=$request['unit_id'];
         $key->must=$must;
         $key->homeStatus=$request['homeStatus'];
         $key->status=$request['status'];
@@ -167,6 +168,7 @@ class ProductController extends Controller
         $key->discountedPrice=$request['discountedPrice'];
         $key->categoryId=$request['categoryId'];
         $key->brandId=$request['brandId'];
+        $key->unit_id=$request['unit_id'];
         $key->must=$must;
         $key->homeStatus=$request['homeStatus'];
         $key->status=$request['status'];
